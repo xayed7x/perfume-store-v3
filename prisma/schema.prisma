@@ -5,15 +5,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// We are changing this block back to PostgreSQL for Vercel
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
+// Our Product model remains exactly the same.
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
-  description String   // We have removed @db.Text from this line
+  description String
   price       Float
   imageUrl    String
   createdAt   DateTime @default(now())
