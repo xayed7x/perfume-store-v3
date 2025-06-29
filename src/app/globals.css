@@ -1,0 +1,21 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #FFFBF5;
+  color: #4D4D4D;
+  font-family: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding-top: 2rem;
+}
